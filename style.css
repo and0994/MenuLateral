@@ -1,0 +1,99 @@
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #checkbox-menu {
+        position: absolute;
+        opacity: 0;
+    }
+    
+    label {
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        height: 22px;
+        width: 30px;
+        margin-top: 5px;
+        margin-left: 5px;
+        z-index: 1;
+    }
+    
+    label span {
+        position: absolute;
+        display: block;
+        height: 5px;
+        width: 100%;
+        border-radius: 30px;
+        background-color: #FA432B;
+        transition: 0.25s ease-in-out;
+        z-index: 1;
+    }
+    
+    label span:nth-child(1) {
+        top: 0;
+    }
+    
+    label span:nth-child(2) {
+        top: 8px;
+    }
+    
+    label span:nth-child(3) {
+        top: 16px;
+    }
+    
+    #checkbox-menu:checked+label span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: 8px;
+    }
+    
+    #checkbox-menu:checked+label span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #checkbox-menu:checked+label span:nth-child(3) {
+        transform: rotate(45deg);
+        top: 8px;
+    }
+    /*FINAL HAMBURGER*/
+    
+    a {
+        text-decoration: none;
+        display: block;
+        padding: 20px 5px;
+        color: #fff;
+    }
+    
+    body {
+        font-family: sans-serif;
+        background-image: url("");
+        background-size: 100%;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    nav {
+        background-color: rgba(16, 16, 16, .5);
+        width: 350px;
+        height: 100%;
+        position: absolute;
+        left: -350px;
+        transition: all .5s;
+    }
+    
+    a:hover {
+        background-color: #FA432B;
+        color: black;
+    }
+    
+    ul {
+        top: 70px;
+        position: absolute;
+        width: 100%;
+    }
+    
+    input[type="checkbox"]:checked~nav {
+        transform: translateX(350px);
+    }
